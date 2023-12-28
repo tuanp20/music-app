@@ -5,14 +5,13 @@ require("dotenv/config");
 const cors = require("cors");
 const { default: mongoose } = require("mongoose");
 
-app.get("/", (req, res) => {
-    return res.json("Hello World");
-});
+app.use(cors({origin: true}))
 
 //user authentication route
 const userRoute = require("./routes/auth");
 app.use("/api/users/", userRoute);
 
+//connect mongodb
 mongoose.connect(process.env.DB_STRING, { useNewUrlParser: true });
 
 mongoose.connection

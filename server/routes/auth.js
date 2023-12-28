@@ -7,7 +7,7 @@ router.get("/login", async (req, res) => {
     if (!req.headers.authorization) {
         return res.status(500).send({ message: "Invalid token" });
     }
-    const token = req.headers.authorization.split(" ")[0];
+    const token = req.headers.authorization.split(" ")[1];
     try {
         const decodeValue = await admin.auth().verifyIdToken(token);
         console.log("decodeValue", decodeValue);
