@@ -3,7 +3,6 @@ const artist = require("../models/artist");
 const router = require("express").Router();
 
 router.post("/createArtist", async (req, res) => {
-    console.log('req', req)
     const newArtist = artist({
         name: req.body.name,
         imageURL: req.body.imageURL,
@@ -33,7 +32,7 @@ router.get("/getOne/:id", async (req, res) => {
 
 router.get("/getAll", async (req, res) => {
     const options = {
-        sort: { createdAt: 1, }
+        // sort: { createdAt: 1, }
     };
 
     const data = await artist.find(options);
