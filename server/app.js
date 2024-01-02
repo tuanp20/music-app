@@ -18,7 +18,7 @@ app.use("/api/artist/", artistRoute);
 
 //Albums routes
 const albumRoute = require("./routes/album");
-app.use("/api/album/", albumRoute);
+app.use("/api/albums/", albumRoute);
 
 //Songs routes
 const songsRoute = require("./routes/songs");
